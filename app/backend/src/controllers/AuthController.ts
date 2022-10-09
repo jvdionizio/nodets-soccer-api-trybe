@@ -10,6 +10,18 @@ class AuthController {
 
     res.status(StatusCodes.OK).json({ token });
   };
+
+  validate = async (req: Request, res: Response): Promise<void> => {
+    const token = req.headers.authorization as string;
+    /* if (!token) {
+      const err = new Error('No token provided');
+      err.name = ReasonPhrases.UNAUTHORIZED;
+      throw err;
+    } */
+    const role = await AuthService.validate(token);
+
+    res.status(200).json({ role });
+  };
 }
 
 export default AuthController;
