@@ -13,7 +13,6 @@ router.post(
   validateLoginUser,
   authController.login,
 );
-
 router.get(
   '/validate',
   validateToken,
