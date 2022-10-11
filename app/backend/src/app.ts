@@ -1,9 +1,10 @@
 import * as express from 'express';
-import authRouter from './routes/authRouter';
+import 'express-async-errors';
 import errorMiddleware from './middlewares/errors';
-import teamsRouter from './routes/teamsRouter';
-import matchesRouter from './routes/matchesRouter';
-import leaderboardRouter from './routes/leaderboardRouter';
+import authRouter from './routers/authRouter';
+import teamsRouter from './routers/teamsRouter';
+import matchesRouter from './routers/matchesRouter';
+import leaderboardRouter from './routers/leaderboardRouter';
 
 class App {
   public app: express.Express;

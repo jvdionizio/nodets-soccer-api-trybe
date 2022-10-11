@@ -13,10 +13,6 @@ router.post(
   validateLoginUser,
   authController.login,
 );
-router.get(
-  '/validate',
-  validateToken,
-  authController.validate,
-);
+router.get('/validate', validateToken, authController.validate);
 
 export default router;
